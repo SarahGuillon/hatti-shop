@@ -1,3 +1,12 @@
+:root {
+  --deepchampagne: #F5D49E;
+  --bistre: #322618;
+  --grullo:#AE9C84;
+  --kakhiweb: #CFBDA7;
+  --copperpenny: #BA6A66;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
