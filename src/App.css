@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: var(--bistre);
+  background-color: var(--copperpenny);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
 }
 
 .App-link {
-  color: var(--grullo);
+  color: white;
   margin-top: 40px;
 }
 

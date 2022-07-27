@@ -1,5 +1,6 @@
 import hattiLogo from './hattiLogo.png';
 import './App.css';
+// import { firebaseConfig } from './firebaseConfig.js';
 
 function App() {
   return (
