@@ -1,0 +1,27 @@
+.navbar-logo {
+  border-radius: 50%;
+}
+
+.navbar {
+  background-color: var(--copperpenny);
+}
+
+.navbar-brand, .navbar-brand:hover {
+  color: #D9ADAB;
+  font-size: 28px;
+}
+
+.nav-link {
+  color: white;
+  font-size: larger;
+}
+
+.nav-link:hover {
+  font-weight: 500;
+  color: white;
+}
+
+.navbar .container-fluid button:hover  {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+}

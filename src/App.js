@@ -1,22 +1,25 @@
-import hattiLogo from './hattiLogo.png';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import './App.css';
+import NavBar from "./components/navBar";
+// import firebase from "firebase";
+// import "firebase/auth";
+// import {FirebaseAuthProvider, IfFirebaseAuthed, IfFirebaseUnAuthed} from "@react-firebase/auth";
+// import { FirebaseDatabaseProvider } from "@react-firebase/database";
 // import { firebaseConfig } from './firebaseConfig.js';
+import Home from "./pages/home";
+// import LoginPage from "./pages/loginPage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={hattiLogo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Log in
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <NavBar/>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
