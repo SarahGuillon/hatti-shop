@@ -1,19 +1,12 @@
+import SignInForm from '../components/signInForm';
 import hattiLogo from '../images/hattiLogo.png';
+import '../styles/loginPage.css';
 
 const LoginPage = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={hattiLogo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Log in
-        </a>
-      </header>
+    <div className="login-page-container">
+      <img src={hattiLogo} className="login-page-logo" alt="logo" />
+      <SignInForm/>
     </div>
   );
 }

@@ -1,23 +1,28 @@
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/navBar";
-// import firebase from "firebase";
-// import "firebase/auth";
-// import {FirebaseAuthProvider, IfFirebaseAuthed, IfFirebaseUnAuthed} from "@react-firebase/auth";
-// import { FirebaseDatabaseProvider } from "@react-firebase/database";
-// import { firebaseConfig } from './firebaseConfig.js';
+import "firebase/compat/auth";
+import firebase from 'firebase/compat/app';
+import {firebaseConfig} from "./firebaseConfig.js";
+import { FirebaseAuthProvider, IfFirebaseAuthed, IfFirebaseUnAuthed } from "@react-firebase/auth";
 import Home from "./pages/home";
-// import LoginPage from "./pages/loginPage";
+import LoginPage from "./pages/loginPage";
 
 
 function App() {
   return (
     <>
       <Router>
-        <NavBar/>
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-        </Routes>
+        <FirebaseAuthProvider { ...firebaseConfig } firebase={firebase}>
+          <IfFirebaseUnAuthed>
+            <LoginPage/>
+          </IfFirebaseUnAuthed>
+          <IfFirebaseAuthed>
+            <NavBar/>
+            <Routes>
+              <Route path="/" exact element={<Home />} />
+            </Routes>
+          </IfFirebaseAuthed>
+        </FirebaseAuthProvider>
       </Router>
     </>
   );
