@@ -7,9 +7,6 @@ const Home = () => {
       <p>Sales</p>
       <p>Purchases</p>
       <p>Workshop</p>
-     
-
-
     </div>
   );
 }
