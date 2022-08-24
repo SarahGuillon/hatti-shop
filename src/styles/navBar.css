@@ -6,22 +6,24 @@
   background-color: var(--copperpenny);
 }
 
-.navbar-brand, .navbar-brand:hover {
-  color: #D9ADAB;
-  font-size: 28px;
+.navbar .btn-log-out {
+  border-radius: 74px;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  background-color: #c47c7a;
+  color: white;
 }
 
-.nav-link {
+.navbar .btn-log-out:hover {
+  background-color: #c78583;
+  font-weight: 500;
+}
+/* .nav-link {
   color: white;
   font-size: larger;
-}
+} */
 
-.nav-link:hover {
+/* .nav-link:hover {
   font-weight: 500;
   color: white;
-}
-
-.navbar .container-fluid button:hover  {
-  background-color: rgba(255, 255, 255, 0.3);
-  font-weight: 400;
-}
+} */

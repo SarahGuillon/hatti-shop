@@ -10,10 +10,6 @@ import LoginPage from "./pages/loginPage";
 
 function App() {
 
-const logout = () => {
-  firebase.auth().signOut();
-}
-
   return (
     <>
       <Router>
@@ -23,9 +19,6 @@ const logout = () => {
           </IfFirebaseUnAuthed>
           <IfFirebaseAuthed>
             <NavBar/>
-            <div>
-              <button onClick={logout}>Se déconnecter</button>
-            </div>
             <Routes>
               <Route path="/" exact element={<Home />} />
             </Routes>
