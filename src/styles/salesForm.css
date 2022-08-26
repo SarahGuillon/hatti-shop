@@ -1,0 +1,51 @@
+
+.sales-form {
+  margin: 0 auto;
+}
+
+
+.sales-form .input-container {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 12px 12px 16px;
+  /* max-width: 280px; */
+  height: 48px;
+  margin: 8px;
+}
+
+.sales-form .input-container:hover {
+  border: 2px solid var(--copperpenny);
+}
+
+.sales-form .input-container span {
+  margin-right: 5px;
+  color: rgba(0,0,0,0.6);
+  font-size: 12px;
+}
+
+.sales-form .input-container input {
+  border: 0;
+  padding: 0;
+  color: rgba(0,0,0,0.87);
+}
+
+.sales-form .input-container input::placeholder {
+  color: rgba(0,0,0,0.6);
+  font-size: 12px;
+}
+
+.sales-form .input-container input:focus {
+  outline: none;
+}
+
+.sales-form .sales-button {
+  color: white;
+  background-color: #EFBD6B;
+  border: none;
+  padding: 8px 32px;
+  border-radius: 74px;
+  font-weight: 500;
+}
