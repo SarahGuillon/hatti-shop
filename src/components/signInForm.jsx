@@ -1,17 +1,23 @@
 import { useState } from "react";
-import "firebase/compat/auth";
-import firebase from 'firebase/compat/app';
+import { auth } from "../initFirebase"
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 
 const SignInForm = () => {
 
   const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
-  // const [error, setError] = useState('');
 
-  const login = () => {
-    firebase.auth().signInWithEmailAndPassword(mail, password);
+
+
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(auth, mail, password);
+      console.log(user.user.email);
+      console.log(auth.currentUser.email);
+    } catch(error) { console.log(error) }
   }
+
 
   return (
     <div className="login-form">

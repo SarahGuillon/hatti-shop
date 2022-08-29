@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import hattiLogo from '../images/hattiLogo.png';
 import '../styles/navBar.css';
 import { FaLock } from 'react-icons/fa';
-// import "firebase/compat/auth";
-import firebase from 'firebase/compat/app';
+import { signOut } from "firebase/auth";
+import { auth } from "../initFirebase";
 
 const NavBar = () => {
 
-  const logout = () => {
-    firebase.auth().signOut();
+  const logout = async () => {
+      await signOut(auth);
+      console.log(auth.currentUser);
   }
 
   return (
