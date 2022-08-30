@@ -15,7 +15,7 @@ function App() {
 
   onAuthStateChanged(auth, (currentUser) => {
     setCurrentUser(currentUser);
-    console.log(currentUser);
+    // console.log(currentUser);
   });
 
 

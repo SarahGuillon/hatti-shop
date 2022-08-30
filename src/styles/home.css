@@ -10,3 +10,7 @@
   margin: 0 auto;
   display: flex;
 }
+
+.home .table-card {
+  margin-top: 100px;
+}

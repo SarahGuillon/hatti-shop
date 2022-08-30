@@ -13,8 +13,8 @@ const SignInForm = () => {
   const login = async () => {
     try {
       const user = await signInWithEmailAndPassword(auth, mail, password);
-      console.log(user.user.email);
-      console.log(auth.currentUser.email);
+      // console.log(user.user.email);
+      // console.log(auth.currentUser.email);
     } catch(error) { console.log(error) }
   }
 

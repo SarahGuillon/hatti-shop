@@ -11,6 +11,8 @@ const Home = () => {
         <h1>Sales register</h1>
         <div className="form-card">
           <SalesForm />
+        </div>
+        <div className="table-card">
           <ListSales />
         </div>
       </div>
