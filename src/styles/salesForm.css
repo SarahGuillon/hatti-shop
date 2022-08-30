@@ -1,6 +1,10 @@
 
 .sales-form {
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  /* width: 20em; */
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 
@@ -14,6 +18,8 @@
   /* max-width: 280px; */
   height: 48px;
   margin: 8px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 10px 30px rgba( 0, 0, 0, 0.15 );
 }
 
 .sales-form .input-container:hover {

@@ -1,5 +1,9 @@
+.home {
+  background: #fffbef;
+}
+
 .home h1 {
-  margin: 40px auto;
+  padding-top: 40px;
 }
 
 .home .form-card {
@@ -11,6 +15,7 @@
   display: flex;
 }
 
-.home .table-card {
+.home .sales-table-container {
   margin-top: 100px;
+  background-color: #FFFFFF;
 }

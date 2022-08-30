@@ -1,3 +1,4 @@
+import "../styles/listSales.css";
 import { useState } from "react";
 import { db } from "../initFirebase";
 // import collection and getDocs method (getDoc method is for an individual item)
@@ -17,7 +18,7 @@ const ListSales = () => {
     const salesCollection = collection(db, 'sales');
     getDocs(salesCollection)
       .then(response => {
-        // console.log(response.docs);
+        console.log(response.docs);
         const datas = response.docs.map( doc => {
           return {
             data: doc.data(),
@@ -31,14 +32,31 @@ const ListSales = () => {
   }
 
   return (
-    <div>
-      <ul>
-        { sales.map(sale => {
-          return (
-            <li key={sale.id}>{sale.data.product}</li>
-          )
-        })}
-      </ul>
+    <div className="sales-table-container">
+      <table className="sales-table">
+        <thead>
+          <tr>
+            <th> Date </th>
+            <th> Product </th>
+            <th> Unit Price </th>
+            <th> Quantity </th>
+            <th> Total Price </th>
+          </tr>
+        </thead>
+        <tbody>
+          { sales.map(sale => {
+            return (
+              <tr key={sale.id}>
+                {/* <td>{new Date(sale.data.date.seconds * 1000).toISOString().substring(0, 10)}</td> */}
+                {/* <td>{sale.data.product}</td> */}
+                {/* <td> <span> ₹ </span> {sale.data.unitPrice}</td> */}
+                <td>{sale.data.quantity}</td>
+                {/* <td> <span> ₹ </span> {sale.data.totalPrice}</td> */} */}
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
