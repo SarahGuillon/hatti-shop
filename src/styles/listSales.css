@@ -1,7 +1,6 @@
 .sales-table-container {
-  margin: 0 auto;
+  margin: 80px auto;
   width: fit-content;
-  margin-top: 5em ;
   border: 1px solid rgba(0,0,0,0.12);
   border-radius: 4px;
   font-size: 14px;

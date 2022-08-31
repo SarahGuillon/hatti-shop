@@ -1,7 +1,7 @@
 // import { FirebaseDatabaseMutation } from "@react-firebase/database";
 import { useState } from "react";
 import { db } from "../initFirebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, Timestamp } from "firebase/firestore/lite";
 
 const SalesForm = () => {
 
@@ -11,36 +11,37 @@ const SalesForm = () => {
   const [unitPrice, setUnitPrice] = useState('');
   const [totalPrice, setTotalPrice] = useState('');
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const currentDate = new Date();
-  //   setDate(currentDate.toISOString().substring(0, 10));
-  //   console.log(date);
-  //   if(productName=== "" || quantity==="" || unitPrice==="" || totalPrice==="") {
-  //     return ("")
-  //   };
-  //   const datas = collection(db, "sales");
-    // addDoc(datas, [{
-    //   // date: {date},
-    //   product: {productName},
-    //   unitPrice: {unitPrice},
-    //   quantity: {quantity},
-    //   totalPrice: {totalPrice},
-    // }])
-    // .then(response => console.log(response))
-    // .catch(error => console.log(error.message));
-  // }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const currentDate = Timestamp.fromDate(new Date());
+    setDate(currentDate);
+    console.log(date);
+    if(productName=== "" || quantity==="" || unitPrice==="" || totalPrice==="") {
+      return ("")
+    };
+    const datas = collection(db, "sales");
+    addDoc(datas, {
+      date: currentDate,
+      product: productName,
+      quantity: quantity,
+      unitPrice: unitPrice,
+      totalPrice: totalPrice,
+    })
+    .then(response => console.log(response))
+    .catch(error => console.log(error.message))
+  }
 
   return (
-    <div className="sales-form">
-      <form>
+    <div className="sales-form-card">
+      <h2 className="header-form-card">Add a new sale :</h2>
+      <div className="sales-form">
         <div className="input-container">
           <input
             placeholder="Product name"
             type="text"
-            name="productName"
+            name="product"
             required
-            // id="product-name"
+            id="productName"
             value={productName}
             onChange={(event)=>setProductName(event.target.value)}
           />
@@ -48,43 +49,43 @@ const SalesForm = () => {
         <div className="input-container">
           <input
             placeholder="Quantity"
-            type="text"
+            type="number"
+            inputmode="numeric"
             name="quantity"
             required
-            // id="quantity"
+            id="quantity"
             value={quantity}
             onChange={(event)=>setQuantity(event.target.value)}
           />
         </div>
         <div className="input-container">
-          <span> ₹ / unit</span>
           <input
             placeholder="Price"
-            type="text"
+            type="number"
             name="unitPrice"
             required
-            // id="unit-price"
+            id="unitPrice"
             value={unitPrice}
             onChange={(event)=>setUnitPrice(event.target.value)}
           />
+          <span> ₹ / unit</span>
         </div>
         <div className="input-container">
-          <span> ₹ </span>
           <input
-            placeholder={unitPrice * quantity}
-            type="text"
+            placeholder="Total Price"
+            type="number"
             name="totalPrice"
             required
-            // id="totalPrice"
+            id="totalPrice"
             value={totalPrice}
             onClick={(event)=>setTotalPrice(unitPrice * quantity)}
             onChange={(event)=>setTotalPrice(event.target.value)}
           />
+          <span> ₹ </span>
         </div>
-
-        <p> discount applied : {totalPrice - unitPrice * quantity} ₹</p>
-        <button type="submit" className="sales-button"> Add </button>
-      </form>
+        <button className="sales-button" onClick={e => handleSubmit(e)}> + </button>
+      </div>
+      {/* <div><p> discount applied : {totalPrice - unitPrice * quantity} ₹</p></div> */}
     </div>
   );
 }
