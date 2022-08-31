@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
 
 :root {
   --deepchampagne: #F5D49E;
   --bistre: #322618;
   --grullo:#AE9C84;
-  --kakhiweb: #fdf5e8;
+  --kakhiweb: rgb(253, 245, 232);
   --copperpenny: #BA6A66;
   --smokyblack: #0E0A07;
 }

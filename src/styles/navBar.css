@@ -4,6 +4,7 @@
 
 .navbar {
   background-color: var(--copperpenny);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
 
 .navbar .btn-log-out {
