@@ -7,16 +7,24 @@ const SignInForm = () => {
 
   const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(false);
 
-
-
-  const login = async () => {
-    try {
-      const user = await signInWithEmailAndPassword(auth, mail, password);
-      // console.log(user.user.email);
-      // console.log(auth.currentUser.email);
-    } catch(error) { console.log(error) }
+  const login = () => {
+    setErrorMessage(false);
+    signInWithEmailAndPassword(auth, mail, password)
+      .then((userCredential) => {
+      // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      // ...
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        setErrorMessage(true);
+      });
   }
+
 
 
   return (
@@ -45,10 +53,13 @@ const SignInForm = () => {
           onChange={(event)=>setPassword(event.target.value)}>
         </input>
       </div>
-      {/* <p>Validation</p> */}
       <div>
         <button onClick={login}> Login </button>
       </div>
+      { errorMessage &&
+      <div className="error-message">
+        <p>Nom d'utilisateur ou mot de passe erroné</p>
+      </div> }
     </div>
   );
 }

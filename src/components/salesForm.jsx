@@ -51,7 +51,6 @@ const SalesForm = () => {
             <input
               placeholder="Quantity"
               type="number"
-              inputmode="numeric"
               name="quantity"
               required
               id="quantity"

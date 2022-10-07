@@ -51,6 +51,11 @@
   font-weight: 400;
 }
 
+.login-page-container .login-form .error-message p {
+  font-size: 12px;
+  margin-top: 30px;
+}
+
 .login-form button {
   background-color: #EFBD6B;
   color:white;

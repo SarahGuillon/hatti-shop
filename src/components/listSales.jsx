@@ -12,13 +12,13 @@ const ListSales = () => {
 
   useEffect(() => {
     getSales();
-  }, [sales])
+  }, []);
 
   const getSales = () => {
     const salesCollection = collection(db, 'sales');
     getDocs(salesCollection)
       .then(response => {
-        console.log(response.docs);
+        // console.log(response.docs);
         const datas = response.docs.map( doc => {
           return {
             data: doc.data(),
@@ -26,7 +26,7 @@ const ListSales = () => {
           };
         });
         setSales(datas);
-        console.log(sales);
+        // console.log(sales);
       })
       .catch(error => console.log(error.message));
   }
@@ -45,10 +45,10 @@ const ListSales = () => {
         </thead>
         <tbody>
           { sales.map(sale => {
-            console.log(sale.data.product);
+            // console.log(sale.data.product);
             return (
               <tr key={sale.id}>
-                <td>{new Date(sale.data.date.seconds * 1000).toISOString().substring(0, 10)}</td> 
+                <td>{new Date(sale.data.date.seconds * 1000).toISOString().substring(0, 10)}</td>
                 <td>{sale.data.product} </td>
                 <td> <span> ₹ </span> {sale.data.unitPrice}</td>
                 <td>{sale.data.quantity}</td>

@@ -14,11 +14,15 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="container-fluid">
-        <Link to ="/" className="navbar-brand display-1">
-          <img src={hattiLogo} className="navbar-logo me-3" width="70px" alt="logo"/>
+        <Link to ="/" className="navbar-brand">
+          <img src={hattiLogo} className="navbar-logo" width="70px" alt="logo"/>
         </Link>
-        <button className="btn-log-out" onClick={logout}>
-          <FaLock/> Logout
+        <h3 className="navbar-header">Sales Dashboard </h3>
+        <button className="btn-log-out-container" onClick={logout}>
+          <div className="btn-log-out">
+            <FaLock/>
+          </div>
+          <p className="btn-log-out-text">Logout</p>
         </button>
       </div>
     </nav>
