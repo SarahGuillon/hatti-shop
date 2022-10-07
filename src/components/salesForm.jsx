@@ -60,7 +60,7 @@ const SalesForm = () => {
           </div>
           <div className="input-container">
             <input
-              placeholder="Price"
+              placeholder="Unit price"
               type="number"
               name="unitPrice"
               required
@@ -70,9 +70,9 @@ const SalesForm = () => {
             />
             <span> ₹ / unit</span>
           </div>
-          <div className="input-container">
+          <div className="input-container last-child">
             <input
-              placeholder="Total Price"
+              placeholder="Total cost"
               type="number"
               name="totalPrice"
               required

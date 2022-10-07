@@ -58,7 +58,7 @@ const SignInForm = () => {
       </div>
       { errorMessage &&
       <div className="error-message">
-        <p>Nom d'utilisateur ou mot de passe erroné</p>
+        <p>The email or password is incorrect</p>
       </div> }
     </div>
   );
